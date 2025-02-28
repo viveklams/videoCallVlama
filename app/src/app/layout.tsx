@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";  
 import "./globals.css";  
 import { ClerkProvider } from "@clerk/nextjs";  
+import ConvexClerkProvider from "@/components/ui/providers/ConvexClerkProvider";
 
 const geistSans = localFont({  
   src: "./fonts/GeistVF.woff",  
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
 };  
 
 // Directly using the publishable key here  
-const PUBLISHABLE_KEY = "pk_test_c29saWQtcXVldHphbC0xMi5jbGVyay5hY2NvdW50cy5kZXYk"; // Replace this with your actual publishable key  
+//const PUBLISHABLE_KEY = "pk_test_dW5pcXVlLXBlZ2FzdXMtMzkuY2xlcmsuYWNjb3VudHMuZGV2JA"; // Replace this with your actual publishable key  
 
 export default function RootLayout({  
   children,  
@@ -28,12 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;  
 }>) {  
   return (  
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>  
+    <ConvexClerkProvider>  
       <html lang="en">  
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>  
           {children}  
         </body>  
       </html>  
-    </ClerkProvider>  
+    </ConvexClerkProvider>  
   );  
 }  

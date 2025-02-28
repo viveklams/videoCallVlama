@@ -11,3 +11,6 @@ export default defineSchema({
         clerkId : v.string(),
     }).index ("by_clerk_id", ["clerkId"])
 })  
+
+
+//https://unique-pegasus-39.clerk.accounts.dev
